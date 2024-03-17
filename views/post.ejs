@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= title %></title>
+    <title><%= post.title %></title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div class="container">
-    <%= content %>
-    </div>
+    <h1><%= post.title %></h1>
+    <p><%= post.content %></p>
+    <a href="/">Home</a>
+    <form action="/post/<%= post.id %>?_method=DELETE" method="POST" style="display: inline;">
+        <button type="submit">DELETE</button>
+    </form>
 </body>
 </html>

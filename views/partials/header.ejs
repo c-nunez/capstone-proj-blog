@@ -24,16 +24,93 @@
                     <li class="nav-item">
                     <a class="nav-link" href="/new_post">New Post</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                    </li>
                 </ul>
+
                 <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                    <button class="btn btn-primary" onclick="document.location='/new_post'">Create</button>
+                    <!-- Button trigger modal -->
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalId"
+                    >
+                        New Post
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div
+                        class="modal fade"
+                        id="modalId"
+                        tabindex="-1"
+                        role="dialog"
+                        aria-labelledby="modalTitleId"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitleId">
+                                        New blog post:
+                                    </h5>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+
+                                <div class="mx-auto my-3" style="max-width: 700px;">
+                                    <form action="/submit" method="post">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">@</span>
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+                                                <label for="floatingInputGroup1">Username</label>
+                                            </div>                                            
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Title">
+                                                <label for="floatingInputGroup1">Title</label>
+                                            </div>                                            
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                            <label for="floatingTextarea2">Content</label>
+                                        </div>
+                                        <button type="reset"class="btn btn-primary">Reset</button>
+                                    
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary"
+                                        >
+                                            Submit
+                                        </button>
+                                        
+                                        
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        var modalId = document.getElementById('modalId');
+                    
+                        modalId.addEventListener('show.bs.modal', function (event) {
+                              // Button that triggered the modal
+                              let button = event.relatedTarget;
+                              // Extract info from data-bs-* attributes
+                              let recipient = button.getAttribute('data-bs-whatever');
+                    
+                            // Use above variables to manipulate the DOM
+                        });
+                    </script>
+                    
                 </div>
+                
                 </div>
             </div>
         </nav>

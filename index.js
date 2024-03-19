@@ -30,9 +30,11 @@ app.get("/post/new", (req,res) => {
 // Renders a form to create a new post
 app.post('/post', (req, res) => {
     const { title, content } = req.body;
+    const date = new Date().toDateString();
     const newPost = {
         id: posts.length + 1,
         title,
+        date,
         content
     };
     posts.push(newPost);

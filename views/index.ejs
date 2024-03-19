@@ -12,34 +12,24 @@
                         
                     </div>
                     <p>The feel good blog with random facts.</p>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Panda-emonium</li>
-                        <li class="list-group-item">post</li>
-                        <li class="list-group-item">post</li>
-                        <li class="list-group-item">post</li>
-                        <li class="list-group-item">post</li>
-                    </ul>
                 </div>
             </aside>
 
             <section class="col">
                 <article>
-                    <ul>
+                    <h1>Posts</h1>
+
+                    <ul class="list-group list-group-flush">
                         <% for(let post of posts) { %>
-                            <li>
+                            <li class="list-group-item">
                                 <a href="/post/<%= post.id %>"><%= post.title %></a>
-                                <!-- <form action="/post/<%= post.id %>?_method=DELETE" method="POST" style="display: inline;">
-                                    <button type="submit">DELETE</button>
-                                </form> -->
-                            </li>
+                                <p><%= post.date %></p>
+
                         <% } %>
-                    </ul>
-                    <a href="/post/new">Create new post</a>
-                </article>
-                
+                    </ul>                    
+                </article>                
             </section>
-        </div>
-        
+        </div>        
     </div>
 
     

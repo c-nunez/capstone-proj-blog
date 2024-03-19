@@ -16,101 +16,70 @@
                 </button>
         
                 <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-                <a class="navbar-brand col-lg-3 me-0" href="#">{The YOU'RE awesome blog}</a>
-                <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="/new_post">New Post</a>
-                    </li>
-                </ul>
+                    <a class="navbar-brand col-lg-3 me-0" href="/">{The YOU'RE awesome blog}</a>
+                    <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                        <li class="nav-item">
+                        <!-- <a class="nav-link" href="/new_post">New Post</a> -->
+                        </li>
+                    </ul>
 
-                <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                    <!-- Button trigger modal -->
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modalId"
-                    >
-                        New Post
-                    </button>
-                    
-                    <!-- Modal -->
-                    <div
-                        class="modal fade"
-                        id="modalId"
-                        tabindex="-1"
-                        role="dialog"
-                        aria-labelledby="modalTitleId"
-                        aria-hidden="true"
-                    >
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="modalTitleId">
-                                        New blog post:
-                                    </h5>
-                                    <button
-                                        type="button"
-                                        class="btn-close"
-                                        data-bs-dismiss="modal"
-                                        aria-label="Close"
-                                    ></button>
-                                </div>
-
-                                <div class="mx-auto my-3" style="max-width: 700px;">
-                                    <form action="/submit" method="post">
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text">@</span>
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
-                                                <label for="floatingInputGroup1">Username</label>
-                                            </div>                                            
-                                        </div>
-                                        <div class="input-group mb-3">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Title">
-                                                <label for="floatingInputGroup1">Title</label>
-                                            </div>                                            
-                                        </div>
-                                        <div class="form-floating mb-3">
-                                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                            <label for="floatingTextarea2">Content</label>
-                                        </div>
-                                        <button type="reset"class="btn btn-primary">Reset</button>
-                                    
+                    <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+                        <!-- Button trigger modal -->
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalId"
+                        >
+                            New Post
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div
+                            class="modal fade"
+                            id="modalId"
+                            tabindex="-1"
+                            role="dialog"
+                            aria-labelledby="modalTitleId"
+                            aria-hidden="true"
+                        >
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalTitleId">
+                                            New blog post:
+                                        </h5>
                                         <button
-                                            type="submit"
-                                            class="btn btn-primary"
-                                        >
-                                            Submit
-                                        </button>
-                                        
-                                        
-                                    </form>
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"
+                                        ></button>
+                                    </div>
+                                    <div class=" my-3" style="max-width: 800px;">
+                                        <form class="container" action="/post" method="POST">
+                                            <div class="input-group mb-3">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="title" placeholder="Title" name="title">
+                                                    <label for="title">Title</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" id="content" placeholder="Content" name="content" rows="10"></textarea>
+                                                    <label for="content">Content:</label>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-secondary" type="reset">Reset</button>
+                                                <button class="btn btn-primary" type="submit">Create Post</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-
                             </div>
                         </div>
-                    </div>
-                    
-                    <script>
-                        var modalId = document.getElementById('modalId');
-                    
-                        modalId.addEventListener('show.bs.modal', function (event) {
-                              // Button that triggered the modal
-                              let button = event.relatedTarget;
-                              // Extract info from data-bs-* attributes
-                              let recipient = button.getAttribute('data-bs-whatever');
-                    
-                            // Use above variables to manipulate the DOM
-                        });
-                    </script>
-                    
-                </div>
-                
+                    </div>                
                 </div>
             </div>
         </nav>

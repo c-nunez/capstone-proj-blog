@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit post</title>
-</head>
-<body>
+<%- include("partials/header.ejs") %>
+
     <h1>Edit Post</h1>
     <form action="/post/<%= post.id %>?_method=PUT" method="POST">
-        <label for="title">Title:</label><br>
-        <input type="text" id="title" name="title" value="<%= post.title %>"><br>
-        <label for="content">Content:</label><br>
-        <textarea id="content" name="content"><%= post.content %></textarea><br>
-        <button type="submit">Update Post</button>
+        <div class="input-group mb-3">
+            <div class="form-floating">
+                <input class="form-control" type="text" id="title" name="title" value="<%= post.title %>" style="max-width: fit-content;">
+                <label for="title">Title:</label>                
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="form-floating">
+                <textarea class="form-control" id="content" name="content" style="height: fit-content;" ><%= post.content %></textarea>
+                <label for="content">Content:</label>            
+            </div>
+        </div>
+
+
+        <button class="btn btn-outline-primary"  type="submit">Update Post</button>
     </form>
-</body>
-</html>
+<%- include("partials/footer.ejs") %>

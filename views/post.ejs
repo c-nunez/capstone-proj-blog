@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= post.title %></title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
+<%- include("partials/header.ejs") %>
+
     <h1><%= post.title %></h1>
     <p><%= post.content %></p>
-    <a href="/">Home</a>
-    <form action="/post/<%= post.id %>?_method=DELETE" method="POST" style="display: inline;">
-        <button type="submit">DELETE</button>
+    <a href="/"><button class="btn btn-outline-dark">Back</button></a>
+        <form action="/post/<%= post.id %>/edit" method="GET" style="display: inline;">
+        <button class="btn btn-outline-primary" type="submit">EDIT</button>
     </form>
-</body>
-</html>
+    <form action="/post/<%= post.id %>?_method=DELETE" method="POST" style="display: inline;">
+        <button class="btn btn-outline-danger" type="submit">DELETE</button>
+    </form>
+
+<%- include("partials/footer.ejs") %>

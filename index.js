@@ -81,6 +81,7 @@ app.delete('/post/:id', (req, res) => {
     res.redirect('/');
 });
 
+//displays post content
 app.get('/post/:id', (req, res) => {
     const postId = req.params.id;
     const post = posts.find(post => post.id === parseInt(postId));

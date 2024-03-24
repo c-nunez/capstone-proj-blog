@@ -3,9 +3,7 @@ import methodOverride from "method-override";
 // import path from "path";
 
 const app = express();
-
-const hostname = "127.0.0.1";
-const port = 4000;
+const port = 3030;
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
@@ -88,6 +86,6 @@ app.get("/post/:id", (req, res) => {
   res.render("post", { post });
 });
 
-app.listen(port, hostname, () => {
-  console.log(`Server running on http://${hostname}:${port}`);
+app.listen(port, () => {
+  console.log(`Server running on ${port}`);
 });

@@ -3,7 +3,7 @@ import methodOverride from "method-override";
 // import path from "path";
 
 const app = express();
-const port = 3030;
+const port = 4000;
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));

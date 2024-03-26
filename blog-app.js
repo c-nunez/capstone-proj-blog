@@ -1,6 +1,5 @@
 import express from "express";
 import methodOverride from "method-override";
-// import path from "path";
 
 const app = express();
 const port = 4000;
@@ -35,7 +34,6 @@ app.post("/post", (req, res) => {
   };
   posts.push(newPost);
   res.redirect("/");
-  console.log(newPost);
 });
 
 //form to edit the post
@@ -83,6 +81,7 @@ app.get("/post/:id", (req, res) => {
     res.status(404).send("Post not found");
     return;
   }
+
   res.render("post", { post });
 });
 

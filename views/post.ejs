@@ -1,13 +1,26 @@
 <%- include("partials/header.ejs") %>
 
+<div class="row">
+  <div class="col-3">
     <h1><%= post.title %></h1>
-    <p><%= post.content %></p>
-    <a href="/"><button class="btn btn-outline-dark">Back</button></a>
-        <form action="/post/<%= post.id %>/edit" method="GET" style="display: inline;">
-        <button class="btn btn-outline-primary" type="submit">EDIT</button>
-    </form>
-    <form action="/post/<%= post.id %>?_method=DELETE" method="POST" style="display: inline;">
-        <button class="btn btn-outline-danger" type="submit">DELETE</button>
-    </form>
+  </div>
+  <div class="col-6">
+    <% post.content.split('\n').forEach(line => { %>
+    <p><%= line %></p>
+    <% }); %>
+  </div>
+</div>
+
+<a href="/"><button class="btn btn-outline-dark">Back</button></a>
+<form action="/post/<%= post.id %>/edit" method="GET" style="display: inline">
+  <button class="btn btn-outline-primary" type="submit">EDIT</button>
+</form>
+<form
+  action="/post/<%= post.id %>?_method=DELETE"
+  method="POST"
+  style="display: inline"
+>
+  <button class="btn btn-outline-danger" type="submit">DELETE</button>
+</form>
 
 <%- include("partials/footer.ejs") %>
